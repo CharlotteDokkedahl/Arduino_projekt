@@ -1,4 +1,4 @@
-//includere
+//inkludere encoder og rgb display
 #include <Encoder.h>
 #include "rgb_lcd.h"
 
@@ -6,7 +6,7 @@
 rgb_lcd lcd;
 
 //Opsætter encoder
-Encoder encoder(5, 6);
+Encoder encoder(2, 3);
 
 //Opretter varriabler
 int encoderCount=1;
@@ -69,7 +69,7 @@ if(state==1)
 if(state==2)
 {
   //State 2 stop ur
-   lcd.setRGB(255,0,0);
+   lcd.setRGB(255,255,0);
    lcd.setCursor(0,0);
    lcd.print("Stop ur");
    lcd.print("    ");
@@ -78,6 +78,7 @@ if(state==2)
 if(state==3)
 {
   //State 3 gæt tid
+    lcd.setRGB(0,255,0);
    lcd.setCursor(0,0);
    lcd.print("Gaet tid");
    lcd.print("    ");
@@ -87,7 +88,7 @@ if(state==4)
 {
    
   //state 4 kog æg  
-   lcd.setRGB(255,0,0);
+   lcd.setRGB(0,255,255);
    lcd.setCursor(0,0);
     lcd.print("Kog aeg");
      lcd.print("    ");
@@ -97,6 +98,7 @@ if(state==5)
 {
 
  //state 5 vækkeur
+   lcd.setRGB(0,0,255);
 lcd.setCursor(0,0);
     lcd.print("Vaekke ur"); 
      lcd.print("   "); 
